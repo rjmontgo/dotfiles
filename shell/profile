@@ -1,0 +1,38 @@
+
+# set environment variables here
+
+# remove default prompt (which is a % sign)
+# unsetopt PROMPT_SP
+
+# Default programs
+export EDITOR="nvim"
+export TERMINAL="st"
+export BROWSER="firefox"
+
+
+# clean up
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+# zsh config
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+
+# x11 env
+export XINITRC="$XDG_CONFIG_HOME/x11/xinitrc"
+export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
+
+# nvm setup
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+
+export DOCKER_CONFIG="$XDR_CONFIG_HOME/docker"
+
+# export path for local scripts
+export PATH="$PATH:$HOME/.local/bin:$HOME/.local/bin/sb"
+
+# set keymaps to switch escape / caps lock
+
+# startx
+if [ "$(tty)" = "/dev/tty1" ]; then
+    startx &
+fi
