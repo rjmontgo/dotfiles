@@ -1,0 +1,2 @@
+#!/bin/sh 
+pidof -sx dunst || dunst & > /dev/null 2>&1

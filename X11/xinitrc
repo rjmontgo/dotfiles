@@ -1,0 +1,11 @@
+#!/bin/bash
+
+"$XDG_CONFIG_HOME/fehbg/fehbg" &
+
+picom -b &
+
+test -f "$XDG_CONFIG_HOME/X11/real-prog-dvorak" && xkbcomp "$XDG_CONFIG_HOME/X11/real-prog-dvorak" $DISPLAY &
+
+. "$XDG_CONFIG_HOME/X11/xprofile"
+
+exec dwm
