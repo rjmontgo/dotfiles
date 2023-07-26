@@ -1,0 +1,100 @@
+# Font configuration (changes require restart)
+font:
+  # The normal (roman) font face to use.
+  # Style can be specified to pick a specific face.
+  normal:
+    family: Comic Code
+    style: Light
+    # family: "Fira Code"
+    # family: "Source Code Pro"
+    # style: Retina
+
+  # The bold font face
+  bold:
+    family: Comic Code
+    style: Medium
+    # family: "Fira Code"
+    # family: "Source Code Pro"
+
+  # The italic font face
+  italic:
+    family: "Comic Code"
+    style: "Italic"
+    # style: "Light Oblique"
+    # family: "Fira Code"
+    # family: "Source Code Pro"
+    # style: "Medium Italic"
+
+  # Point size of the font
+  size: 12.0
+
+  # Offset is the extra space around each character. offset.y can be thought of
+  # as modifying the linespacing, and offset.x as modifying the letter spacing.
+  offset:
+    x: 0
+    y: 0
+
+  # Glyph offset determines the locations of the glyphs within their cells with
+  # the default being at the bottom. Increase the x offset to move the glyph to
+  # the right, increase the y offset to move the glyph upward.
+  glyph_offset:
+    x: 0
+    y: 0
+
+schemes:
+  everforest_dark: &everforest
+    # Default colors
+    primary:
+      background: '0x272e33'
+      foreground: '0xd3c6aa'
+
+    # Normal colors
+    normal:
+      black:   '0x475258'
+      red:     '0xe67e80'
+      green:   '0xa7c080'
+      yellow:  '0xdbbc7f'
+      blue:    '0x7fbbb3'
+      magenta: '0xd699b6'
+      cyan:    '0x83c092'
+      white:   '0xd3c6aa'
+
+    # Bright colors
+    bright:
+      black:   '0x475258'
+      red:     '0xe67e80'
+      green:   '0xa7c080'
+      yellow:  '0xdbbc7f'
+      blue:    '0x7fbbb3'
+      magenta: '0xd699b6'
+      cyan:    '0x83c092'
+      white:   '0xd3c6aa'
+  
+  gruvbox_dark: &gruvbox
+    # Default colors
+    primary:
+      background: '#282828'
+      foreground: '#d4be98'
+
+    # Normal colors
+    normal:
+      black:   '#3c3836'
+      red:     '#ea6962'
+      green:   '#a9b665'
+      yellow:  '#d8a657'
+      blue:    '#7daea3'
+      magenta: '#d3869b'
+      cyan:    '#89b482'
+      white:   '#d4be98'
+
+    # Bright colors (same as normal colors)
+    bright:
+      black:   '#3c3836'
+      red:     '#ea6962'
+      green:   '#a9b665'
+      yellow:  '#d8a657'
+      blue:    '#7daea3'
+      magenta: '#d3869b'
+      cyan:    '#89b482'
+      white:   '#d4be98'
+colors: *gruvbox
