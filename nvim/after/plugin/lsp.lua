@@ -1,10 +1,17 @@
 local lsp = require("lsp-zero");
+local lspconfig = require("lspconfig");
 
 lsp.preset("recommended")
-lsp.setup_servers({ 'tsserver', 'svelte' });
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+lsp.setup_servers({ 'tsserver', 'svelte', 'gopls', 'nixd', 'pylsp' });
 
 -- configure lua for neovim
-require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
+
+lspconfig.omnisharp.setup {
+  cmd = { "dotnet", "/nix/store/iciwh7i7l4g7b909v2pbmb1nxpyb412m-omnisharp-roslyn-1.39.8/lib/omnisharp-roslyn/OmniSharp.dll" }
+}
+
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
@@ -46,17 +53,3 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup();
--- 
--- lsp.preset("recommended")
--- 
--- 
--- -- lsp.ensure_installed({
--- --   'tsserver',
--- --   'eslint',
--- -- })
--- 
--- local lspconfig = require('lspconfig')
--- 
--- 
--- 
--- lsp.setup()

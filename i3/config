@@ -3,7 +3,7 @@ set $mod Mod4
 font pango:monospace 8
 
 exec --no-startup-id dex --autostart --environment i3
-exec --no-startup-id picom --experimental-backends
+exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -80,6 +80,7 @@ bindsym $mod+period layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
+bindsym $mod+Print exec --no-startup-id dmenurecord
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle

@@ -3,22 +3,22 @@ font:
   # The normal (roman) font face to use.
   # Style can be specified to pick a specific face.
   normal:
-    family: Comic Code
-    style: Light
+    family: monospace
+    style: Regular
     # family: "Fira Code"
     # family: "Source Code Pro"
     # style: Retina
 
   # The bold font face
   bold:
-    family: Comic Code
+    family: monospace
     style: Medium
     # family: "Fira Code"
     # family: "Source Code Pro"
 
   # The italic font face
   italic:
-    family: "Comic Code"
+    family: monospace
     style: "Italic"
     # style: "Light Oblique"
     # family: "Fira Code"
