@@ -1,0 +1,20 @@
+* {
+  all: unset; //Unsets everything so you can style everything from scratch
+}
+
+//Global Styles
+.bar {
+  background-color: #3a3a3a;
+  color: #b0b4bc;
+  padding: 10px;
+}
+
+.workspace-entry {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.current {
+  color: #FFFFFF;
+  background-color: #33ccff;
+}
