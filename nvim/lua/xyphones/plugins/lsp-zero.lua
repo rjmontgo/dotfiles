@@ -3,6 +3,8 @@ return {
   dependencies = {
     -- LSP Support
     { 'neovim/nvim-lspconfig' },
+    {'williamboman/mason.nvim'},           -- Optional
+    {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
     -- Autocompletion
     { 'hrsh7th/nvim-cmp' },

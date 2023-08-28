@@ -1,16 +1,11 @@
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 local lsp = require("lsp-zero");
 local lspconfig = require("lspconfig");
 
 lsp.preset("recommended")
--- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-lsp.setup_servers({ 'tsserver', 'svelte', 'gopls', 'nixd', 'pylsp' });
 
 -- configure lua for neovim
 lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
-
-lspconfig.omnisharp.setup {
-  cmd = { "dotnet", "/nix/store/iciwh7i7l4g7b909v2pbmb1nxpyb412m-omnisharp-roslyn-1.39.8/lib/omnisharp-roslyn/OmniSharp.dll" }
-}
 
 
 local cmp = require('cmp')

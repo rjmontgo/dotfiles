@@ -3,7 +3,10 @@ function clamp {
 	min=$1
 	max=$2
 	val=$3
-	python -c "print(max($min, min($val, $max)))"
+
+  result=$((val < min ? min : (val > max ? max : value)))
+  return result
+
 }
 
 direction=$1
