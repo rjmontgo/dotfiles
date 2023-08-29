@@ -1,0 +1,22 @@
+#!/bin/bash
+# should consider updating this https://github.com/JaKooLit/Ja_HyprLanD-dots/blob/main/config/hypr/scripts/volume
+
+if [ "$1" == "SET" ]; then
+  pulsemixer --set-volume "$2"
+fi 
+
+mute=$(pulsemixer --get-mute)
+vol=$(pulsemixer --get-volume | awk '{ print $1 }')
+
+if (( $mute == 1 )) 
+then
+  echo "󰸈"
+elif (( 0<=$vol && $vol<=25 )) 
+then
+  echo "󰕿"
+elif (( 26<=$vol && $vol<=50 )) 
+then
+  echo "󰖀"
+else 
+  echo "󰕾"
+fi
