@@ -6,7 +6,7 @@ $git_branch\
 \n$character
 """
 
-right_format="""$time"""
+right_format="""$nix_shell$time"""
 
 continuation_prompt = '▶▶ '
 
@@ -45,3 +45,6 @@ disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "fg:white bold"
 format = '[$time]($style)'
+
+[nix_shell]
+format="[❄️ nix]($style) "

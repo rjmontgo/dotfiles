@@ -1,8 +1,0 @@
-pkill google-chrome-stable
-cd ..
-sudo nixos-rebuild switch
-echo $EDITOR
-quit
-exit
-echo $EDITOR
-exit

@@ -22,7 +22,7 @@
 
 ;; volume 
 (defvar VOLUME_VISIBLE false)
-(defvar VOLUME_VALUE :initial 0 "pulsemixer --get-volume | awk '{print $1}'")
+(defvar VOLUME_VALUE "pulsemixer --get-volume | awk '{print $1}'")
 (defpoll VOLUME :interval "10s" "~/.config/eww/scripts/volume")
 (defwidget volume []
   (eventbox 
