@@ -1,10 +1,12 @@
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 local lsp = require("lsp-zero");
+local lspconfig = require("lspconfig");
 
 lsp.preset("recommended")
-lsp.setup_servers({ 'tsserver', 'svelte' });
 
 -- configure lua for neovim
-require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
+
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}

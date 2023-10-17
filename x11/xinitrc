@@ -1,0 +1,2 @@
+xkbcomp ~/.config/xkb/symbols/cust $DISPLAY
+exec dwm

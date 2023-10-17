@@ -1,0 +1,50 @@
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+\n$character
+"""
+
+right_format="""$nix_shell$time"""
+
+continuation_prompt = '▶▶ '
+
+scan_timeout = 10
+ 
+# Disable the blank line at the start of the prompt
+# add_newline = false
+ 
+# You can also replace your username with a neat symbol like  to save some space
+[username]
+show_always = true
+style_user = "bold blue"
+style_root = "bold red"
+format = '[$user]($style)'
+
+[hostname]
+ssh_only = false
+format = '[@](yellow)[$hostname](bold red) '
+trim_at = '.companyname.com'
+disabled = false
+ 
+[directory]
+style = "fg:green"
+format = "[$path]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+truncate_to_repo = true
+ 
+[git_branch]
+symbol = ""
+style = "bg:yellow dimmed"
+format = " [\ue0b6](fg:yellow)[$symbol $branch ]($style)[\ue0b4](fg:yellow)"
+ 
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "fg:white bold"
+format = '[$time]($style)'
+
+[nix_shell]
+format="[❄️ nix]($style) "

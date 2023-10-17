@@ -1,0 +1,81 @@
+// colorscheme from gruvbox material
+// https://user-images.githubusercontent.com/58662350/213884037-97bb9a1b-cc5a-46c1-8d44-877cd85b1cdc.png
+
+* {
+  all: unset; //Unsets everything so you can style everything from scratch
+  font-family: FiraCode Nerd Font;
+}
+
+ scale trough {
+  min-width: 60px;
+  min-height: 6px;
+  border-radius: 10px;
+
+  color: red;
+  background-color: #4e4e4e;
+}
+
+.volume-control-slider trough highlight {
+  background-color: #d3869b;
+  border-radius: 10px;
+}
+
+.brightness-control {
+  padding-right: 2px;
+  color: #d8a657;
+  margin-right: 16px;
+}
+
+.volume-control {
+  color: #d3869b;
+  margin-right: 16px;
+}
+
+.volume-control-slider {
+  margin-left: 8px;
+}
+
+.wifi {
+  color: #7daea3;
+  margin-right: 22px;
+}
+
+.sys-suspend {
+  color: #ddc7a1;
+  margin-right: 14px;
+}
+
+.clock {
+  font-size: 18px;
+  color: #89b482;
+}
+
+.systray {
+  background-color: #3a3a3a;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 12px;
+  padding-right: 8px;
+  border-radius: 16px;
+  font-size: 20px;
+}
+
+.workspaces {
+  background-color: #3a3a3a;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  padding-right: 12px;
+  border-radius: 16px;
+}
+
+.workspace-entry {
+  padding-left: 8px;
+  padding-right: 10px;
+  color: #a89984;
+}
+
+.current-workspace {
+}
+
+

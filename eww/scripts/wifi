@@ -1,0 +1,25 @@
+#!/bin/sh
+
+disconnected=$(nmcli g | grep -oE "disconnected")
+strength=$(nmcli -f IN-USE,SIGNAL,SSID device wifi | awk '/^*/ {print $2}')
+
+if [ $disconnected ] 
+then
+  icon="󰤭"
+else
+  if ((0<=$strength && $strength<=25))
+  then
+    icon="󰤯"
+  elif ((26<=$strength && $strength<=50))
+  then
+    icon="󰤟"
+  elif ((51<=$strength && $strength<=75))
+  then
+    icon="󰤢"
+  else
+    icon="󰤨"
+  fi
+fi
+
+echo $icon
+

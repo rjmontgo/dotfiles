@@ -1,0 +1,10 @@
+[Unit]
+Description=Picom daemon
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/picom
+
+
+[Install]
+WantedBy=graphical.target

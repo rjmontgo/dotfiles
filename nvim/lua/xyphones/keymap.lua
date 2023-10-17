@@ -18,3 +18,16 @@ keymap("n", "<leader><CR>", ":so ~/.config/nvim/init.lua<CR>")
 keymap("n", "<leader>f", vim.lsp.buf.format)
 keymap("n", "<leader>jk", ":vnew ~/.config/nvim<CR>")
 
+
+local function zen_color()
+  if not vim.g['zen_mode'] then
+    vim.cmd("highlight Normal guibg=#000000")
+    vim.g['zen_mode'] = true
+  else
+    vim.cmd("highlight Normal guibg=NONE")
+    vim.g['zen_mode'] = false
+  end
+end
+
+keymap("n", "<leader>z", zen_color)
+

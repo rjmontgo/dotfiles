@@ -1,0 +1,105 @@
+;; BEGIN systray widget
+
+(defwidget metric [label] 
+    (scale
+      :min 0
+      :max 101
+      :active true
+      :value 23
+      :onchange ""))
+
+;; time
+(defpoll TIME :interval "10s" "date '+%H:%M'")
+(defwidget clock []
+  (box
+    (label :class "clock" :text "${TIME}")))
+  
+
+;; brightness
+(defwidget brightness []
+  (box
+    (label :class "brightness-control" :text "󰖨")))
+
+;; volume 
+(defvar VOLUME_VISIBLE false)
+(defvar VOLUME_VALUE "pulsemixer --get-volume | awk '{print $1}'")
+(defpoll VOLUME :interval "10s" "~/.config/eww/scripts/volume")
+(defwidget volume []
+  (eventbox 
+    :onhover "eww update VOLUME_VISIBLE=true" 
+    :onhoverlost "eww update VOLUME_VISIBLE=false"
+  (box
+    :class "volume-control"
+    :space-evenly false
+    (button
+      :onclick "pulsemixer --toggle-mute"
+      (label :class "volume-control-label" :text VOLUME))
+    (revealer
+      :reveal VOLUME_VISIBLE 
+      :transition "slideleft" 
+      (scale
+        :class "volume-control-slider"
+        :min 0
+        :max 101
+        :value VOLUME_VALUE 
+        :onchange "~/.config/eww/scripts/volume SET {}; eww update VOLUME=`~/.config/eww/scripts/volume;`"
+        )))))
+
+;; sleep
+(defwidget sys-suspend []
+  (box
+    (label :class "sys-suspend" :text "󰤄")))
+
+;; wifi
+(defpoll WIFI_ICON :initial "󰤯" :interval "1m" "~/.config/eww/scripts/wifi")
+
+(defwidget wifi []
+  (box
+    (label :class "wifi" :text "${WIFI_ICON}"))
+)
+
+(defwidget systray []
+  (box
+    :orientation "h"
+    :halign "end"
+    :space-evenly false
+    :class "systray"
+    (brightness)
+    (volume)
+    (wifi)
+    (sys-suspend)
+    (clock)
+  ))
+
+
+
+
+;;
+;; BEGIN workspace widget
+;;
+(deflisten workspaces :initial "[]" "bash ~/.config/eww/scripts/get-workspaces")
+(deflisten current_workspace :initial "1" "bash ~/.config/eww/scripts/get-active-workspace")
+
+(defwidget workspaces []
+  (box
+    :spacing 2
+    :space-evenly true
+    :halign "start"
+    :class "workspaces"
+    (label 
+      :text "${workspaces}${current_workspace}"
+      :visible false)
+    (for workspace in workspaces
+      (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}"
+        (box 
+          :class "workspace-entry ${workspace.id == current_workspace ? "current-workspace" :""}"
+          (label :text "${workspace.id == current_workspace ? "" : ""}"))))))
+            
+
+
+(defwidget bar []
+  (box 
+    :class "bar"
+    :orientation "h"
+    (workspaces)
+    (systray)))

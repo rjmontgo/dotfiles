@@ -1,24 +1,34 @@
+import:
+  - /home/rob/.cache/wal/colors-alacritty.yml
+
+
+window:
+  opacity: 0.6
+  padding:
+    y: 8
+    x: 4
+
 # Font configuration (changes require restart)
 font:
   # The normal (roman) font face to use.
   # Style can be specified to pick a specific face.
   normal:
-    family: Comic Code
-    style: Light
+    family: monospace
+    style: Regular
     # family: "Fira Code"
     # family: "Source Code Pro"
     # style: Retina
 
   # The bold font face
   bold:
-    family: Comic Code
+    family: monospace
     style: Medium
     # family: "Fira Code"
     # family: "Source Code Pro"
 
   # The italic font face
   italic:
-    family: "Comic Code"
+    family: monospace
     style: "Italic"
     # style: "Light Oblique"
     # family: "Fira Code"
@@ -26,7 +36,7 @@ font:
     # style: "Medium Italic"
 
   # Point size of the font
-  size: 12.0
+  size: 16.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.

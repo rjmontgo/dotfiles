@@ -31,6 +31,8 @@ local options = {
   updatetime = 300,
   numberwidth = 4,
   cursorline = true,
+  fillchars = { eob = ' ' },
+  showmode = false,
 }
 
 for k, v in pairs(options) do

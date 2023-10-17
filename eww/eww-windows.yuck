@@ -1,0 +1,14 @@
+(include "eww-widgets.yuck")
+
+(defwindow top-bar
+  :monitor 0
+  :geometry (geometry
+                :x "0%"
+                :y "2px"
+                :width "98%"
+                :height "10px"
+                :anchor "bottom center")
+  :stacking "fg"
+  :widowtype "dock"
+  :reserve (struts :side "top" :distance "8%")
+  (bar))
