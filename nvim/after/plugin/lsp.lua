@@ -24,9 +24,12 @@ lsp.set_preferences({
   }
 })
 
-lsp.setup_nvim_cmp({
-  mapping = cmp_mappings
+cmp.setup({
+  mapping = cmp_mappings,
 })
+-- lsp.setup_nvim_cmp({
+--   mapping = cmp_mappings
+-- })
 
 
 lsp.on_attach(function(client, bufnr)
@@ -46,17 +49,3 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup();
--- 
--- lsp.preset("recommended")
--- 
--- 
--- -- lsp.ensure_installed({
--- --   'tsserver',
--- --   'eslint',
--- -- })
--- 
--- local lspconfig = require('lspconfig')
--- 
--- 
--- 
--- lsp.setup()

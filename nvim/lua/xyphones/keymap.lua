@@ -4,6 +4,7 @@ local keymap = vim.keymap.set;
 
 vim.g.mapleader = " "
 
+keymap("i", "kj", "<ESC>", opts)
 --- Normal Mode ---
 -- resize windows easily
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -15,4 +16,5 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<leader>e", vim.cmd.Ex)
 keymap("n", "<leader><CR>", ":so ~/.config/nvim/init.lua<CR>")
 keymap("n", "<leader>f", vim.lsp.buf.format)
+keymap("n", "<leader>jk", ":vnew ~/.config/nvim<CR>")
 

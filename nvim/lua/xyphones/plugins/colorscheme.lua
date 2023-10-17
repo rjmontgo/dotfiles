@@ -1,5 +1,6 @@
 return {
   "ellisonleao/gruvbox.nvim",
   "sainnhe/everforest",
-  "sainnhe/gruvbox-material"
+  "sainnhe/gruvbox-material",
+  "EdenEast/nightfox.nvim"
 };

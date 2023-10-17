@@ -1,6 +1,6 @@
 require'nvim-treesitter.configs'.setup {
   ensure_installed = { "javascript", "typescript", "tsx", "lua" },
-  
+
   sync_install = false,
 
   auto_install = true,
